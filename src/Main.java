@@ -3,7 +3,7 @@ public class Main {
 
         System.out.println("Inside: " + Thread.currentThread().getName());
 
-        threadSleep();
+        threadSleep2();
 
 
     }
@@ -49,8 +49,25 @@ public class Main {
 
         Thread thread = new Thread(runnable);
         thread.start();
-        System.out.println("Thread is back 1");
-        System.out.println("Thread is back 2");
-        System.out.println("Thread is back 3");
+    }
+
+    static void threadSleep2() {
+        Runnable runnable = () -> {
+            for(int i=0; i< 10; i++) {
+                System.out.println("Thread name: " + Thread.currentThread().getName() + "-" + i);
+                try {
+                    Thread.sleep((int)Math.random()*1000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+
+            }
+            System.out.println(Thread.currentThread().getName() + " finished");
+        };
+
+        Thread thread1 = new Thread(runnable);
+        Thread thread2 = new Thread(runnable);
+        thread1.start();
+        thread2.start();
     }
 }
