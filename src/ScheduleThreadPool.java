@@ -22,7 +22,5 @@ public class ScheduleThreadPool {
         scheduledExecutorService.scheduleAtFixedRate(task, 0, 2, TimeUnit.SECONDS);
 
         //scheduledExecutorService.shutdown();
-
-
     }
 }
