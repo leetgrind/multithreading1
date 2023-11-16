@@ -36,10 +36,6 @@ public class ThreadJoinExample {
         Thread thread2 = new Thread(runnable2);
 
         thread2.start();
-
-
-
-
     }
 
 }
