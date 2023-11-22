@@ -20,7 +20,6 @@ public class ThreadRaceCondition {
     }
 }
 
-
 class Counter {
     private int count = 0;
 
