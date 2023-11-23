@@ -10,12 +10,17 @@ public class MemoryError {
 
             }
 
+            System.out.println(Thread.currentThread().getName() +
+                    " Bool value changed in main thread to " + bool);
+
             System.out.println("Out of the loop");
 
             while(bool) {
 
             }
 
+            System.out.println(Thread.currentThread().getName() +
+                    " Bool value changed in main thread to " + bool);
             System.out.println("Out of the second loop");
         });
 
